@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Writing Layer — Supercharge Every Keystroke with Mobile AI</title>
+  <meta name="description" content="AI Writing Layer is an intelligent Android keyboard bringing instant ChatGPT-like replies, real-time Hindi translation, and tone rewrites right into WhatsApp, Telegram, Gmail, and any mobile app. Zero keylogging. DPDP Act & Google Play compliant.">
+  <meta property="og:title" content="AI Writing Layer — Android AI Keyboard">
+  <meta property="og:description" content="Instant smart replies, Hindi translation, and tone rewrites right in your keyboard. Private by design with zero keystroke logging.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Top Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <span class="brand-title">AI Writing Layer</span>
+        <span class="brand-badge">v1.0 Release</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#simulator">Live Demo</a></li>
+        <li><a href="#security">Zero-Log Security</a></li>
+        <li><a href="#compliance">Legal & DPDP</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <a href="#compliance" class="btn-secondary">Privacy Policy</a>
+        <a href="#download" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Get App Bundle
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="pill-badge">
+        <span class="pill-dot"></span>
+        Google Play Ready • DPDP Act 2023 Compliant • Zero Keystroke Logging
+      </div>
+      <h1>Supercharge Every Keystroke.<br><span class="gradient-text">Meet the AI Writing Layer.</span></h1>
+      <p class="hero-subtitle">
+        Instant ChatGPT-like intelligence natively embedded into your Android keyboard. Draft professional emails, generate punchy chat replies, and translate Hindi to English without ever switching apps.
+      </p>
+
+      <div class="hero-cta" id="download">
+        <a href="#simulator" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          Try Interactive Keyboard Demo
+        </a>
+        <a href="#compliance" class="btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          View Privacy & Compliance
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Interactive Keyboard Simulator -->
+  <section class="container" id="simulator">
+    <div class="simulator-container">
+      <!-- Simulator Header -->
+      <div class="simulator-header">
+        <div class="sim-dots">
+          <span class="sim-dot"></span>
+          <span class="sim-dot"></span>
+          <span class="sim-dot"></span>
+        </div>
+        <div class="sim-app-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <span id="appBadgeText">WhatsApp Chat</span>
+        </div>
+        <span style="font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono);">Interactive Sandbox</span>
+      </div>
+
+      <!-- Chat Canvas -->
+      <div class="sim-chat-area" id="chatContainer">
+        <!-- Injected via app.js -->
+      </div>
+
+      <!-- Virtual Keyboard Dock -->
+      <div class="simulator-kb">
+        <div class="kb-topbar">
+          <button class="ai-orb-btn" id="aiOrbBtn" title="Click to cycle apps and scenarios!">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            AI Orb (Cycle Demo)
+          </button>
+
+          <div class="tone-selector">
+            <span class="tone-chip active" data-tone="concise">⚡ Concise</span>
+            <span class="tone-chip" data-tone="professional">💼 Professional</span>
+            <span class="tone-chip" data-tone="friendly">😊 Friendly</span>
+          </div>
+        </div>
+
+        <!-- 3 Smart Reply Suggestions -->
+        <div class="smart-replies-tray">
+          <div class="reply-card">
+            <div class="reply-badge">1. Affirmative</div>
+            <div class="reply-text">Yes, see you there!</div>
+          </div>
+          <div class="reply-card">
+            <div class="reply-badge">2. Alternative</div>
+            <div class="reply-text">Can't make it today, sorry!</div>
+          </div>
+          <div class="reply-card">
+            <div class="reply-badge">3. Brief Ack</div>
+            <div class="reply-text">Joining 10 mins late.</div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.75rem; color: var(--text-dim); text-align: center;">
+          💡 Click any smart reply above to send it into the chat mockup. Tap the <strong>AI Orb</strong> to switch between Chat, Translation, and Email mode.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Grid -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Engineered for Excellence</div>
+        <h2 class="section-title">Everything you need to write effortlessly.</h2>
+        <p class="section-desc">Packed with intelligence, designed with extreme speed, and built with privacy from the ground up.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>3 Instant Smart Replies</h3>
+          <p>Read incoming messages in WhatsApp, Telegram, or Gmail and generate 3 usefully distinct reply options (Affirmative, Polite Pushback, Clarification) in under 1 second.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Hindi & Hinglish to English</h3>
+          <p>Type in natural conversational Hindi or Hinglish (e.g., <em>"Theek hai meeting kal 3 baje rakhte hai"</em>) and convert it into polished, professional English with a single tap.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </div>
+          <h3>Pulse AI Voice Typing</h3>
+          <p>Instant speech-to-text with pulsing waveform visuals, real-time captions, and automated language detection. Hands-free writing made natural.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Automatic Password Shield</h3>
+          <p>AI suggestions, floating orb actions, and clipboard reading are automatically suppressed inside password and PIN fields for ironclad security.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h3>Tone & Style Rewriter</h3>
+          <p>Switch tones effortlessly between Concise, Executive, Friendly, Professional, and Polite. Perfect for workplace Slack messages, client emails, and executive reviews.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-cyan">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Zero Keystroke Logging</h3>
+          <p>Your day-to-day typing is executed 100% locally on your smartphone. We do not store, monitor, sell, or profile your personal keystroke logs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Architecture Banner -->
+  <section class="container" id="security">
+    <div class="security-banner">
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.2); display: flex; align-items: center; justify-content: center; color: #34d399;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3 style="font-family: var(--font-display); font-size: 1.4rem;">Zero-Log Security & Privacy Architecture</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Engineered from day one to respect user privacy and comply with global data protection standards.</p>
+        </div>
+      </div>
+
+      <div class="security-pillars">
+        <div class="sec-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h4>100% Offline Core Keyboard</h4>
+            <p>Every key you tap is rendered offline by Android's native IME engine. No keystroke recording.</p>
+          </div>
+        </div>
+
+        <div class="sec-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h4>Encrypted On-Demand HTTPS</h4>
+            <p>Only text you explicitly tap to rewrite is transmitted via TLS 1.3 encrypted HTTPS.</p>
+          </div>
+        </div>
+
+        <div class="sec-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h4>Ephemeral RAM Processing</h4>
+            <p>AI text is processed in-memory solely to generate the reply. Zero persistent disk logging.</p>
+          </div>
+        </div>
+
+        <div class="sec-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <div>
+            <h4>India DPDP Act 2023 Compliant</h4>
+            <p>Full support for Data Principal rights, purpose limitation, and consent governance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal & Compliance Suite (Tabs) -->
+  <section class="compliance-section" id="compliance">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Governance & Trust</div>
+        <h2 class="section-title">Compliance, Legal & Privacy Suite</h2>
+        <p class="section-desc">Official documentation required for Google Play Store listing and India DPDP Act 2023 compliance.</p>
+      </div>
+
+      <!-- Tabs Navigation -->
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="privacyPolicy">🔒 Privacy Policy</button>
+        <button class="tab-btn" data-tab="termsConditions">📄 Terms of Service</button>
+        <button class="tab-btn" data-tab="dpdpAct">🇮🇳 DPDP Act 2023</button>
+        <button class="tab-btn" data-tab="dataSafety">🛡️ Play Store Data Safety</button>
+      </div>
+
+      <!-- Tab 1: Privacy Policy -->
+      <div class="tab-content active" id="privacyPolicy">
+        <article class="legal-document">
+          <h2>Privacy Policy for AI Writing Layer</h2>
+          <div class="legal-meta">Effective Date: September 26, 2026 • Version 1.0 • Compliant with Google Play & DPDP Act 2023</div>
+
+          <h3>1. Introduction</h3>
+          <p>
+            This Privacy Policy explains how <strong>AI Writing Layer</strong> ("we", "our", or "the App") collects, uses, and protects your information when you install and use our Android Input Method Editor (IME) and AI writing assistant. We are committed to maintaining the highest level of user privacy and data security.
+          </p>
+
+          <h3>2. Zero Keystroke Logging Policy</h3>
+          <p>
+            <strong>We do not log, capture, or store your day-to-day keystrokes.</strong> All regular keyboard interactions (typing letters, numbers, symbols, spaces, backspaces, and punctuation) are processed entirely within the local memory of your Android device. Your typing data is never transmitted to our servers or any third parties during normal keyboard operation.
+          </p>
+
+          <h3>3. On-Demand AI Processing</h3>
+          <p>
+            When you explicitly activate an AI feature by tapping the floating AI orb or an action button (such as <em>Smart Reply</em>, <em>Translate</em>, <em>Improve</em>, or <em>Shorten</em>):
+          </p>
+          <ul>
+            <li><strong>Selected Text Snippet:</strong> Only the specific message or text snippet you have selected or pasted is transmitted securely via TLS 1.3 encrypted HTTPS to our AI processing endpoint.</li>
+            <li><strong>App Context:</strong> The package name of the active app (e.g. <code>com.whatsapp</code> or <code>org.telegram.messenger</code>) is optionally sent as a formatting hint so replies match chat or email standards. No app contents or user identifiers from that app are retrieved.</li>
+            <li><strong>Installation Identifier:</strong> A randomly generated pseudonymous installation ID is included in request headers solely for rate limiting and preventing denial-of-service abuse.</li>
+            <li><strong>Ephemeral In-Memory Handling:</strong> Text sent for AI generation is processed in volatile server memory solely for the purpose of generating candidates. It is never used to train foundational AI models and is not persistently retained.</li>
+          </ul>
+
+          <h3>4. Automatic Password & Sensitive Field Shield</h3>
+          <p>
+            In strict accordance with Google Play policies, our keyboard automatically detects password fields (<code>InputType.TYPE_TEXT_VARIATION_PASSWORD</code>, <code>TYPE_TEXT_VARIATION_WEB_PASSWORD</code>, etc.) and disables all AI suggestions, clipboard context, and floating actions. No data from password or PIN fields is ever processed by AI.
+          </p>
+
+          <h3>5. Microphone & Audio Usage</h3>
+          <p>
+            The <code>android.permission.RECORD_AUDIO</code> permission is requested exclusively when you initiate voice typing. Audio is converted to text in real time using on-device or standard speech recognition services. We do not store or transmit raw audio recordings to any persistent database.
+          </p>
+
+          <h3>6. Data Retention & Erasure</h3>
+          <p>
+            Because we do not maintain user accounts or personal profiles, no persistent database of your personal typing history exists on our servers. You may clear all local preferences anytime via Android Settings → Apps → AI Writing Layer → Clear Data.
+          </p>
+
+          <h3>7. Grievance Redressal & Contact</h3>
+          <p>
+            For privacy inquiries, rights requests under the DPDP Act 2023, or policy questions, please contact our Data Protection Officer at:
+            <br><strong>Email:</strong> privacy@aiwritinglayer.app
+          </p>
+        </article>
+      </div>
+
+      <!-- Tab 2: Terms of Service -->
+      <div class="tab-content" id="termsConditions">
+        <article class="legal-document">
+          <h2>Terms of Service & End User License Agreement (EULA)</h2>
+          <div class="legal-meta">Effective Date: September 26, 2026 • Version 1.0</div>
+
+          <h3>1. Acceptance of Terms</h3>
+          <p>
+            By downloading, installing, or using the <strong>AI Writing Layer</strong> application, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not install or use the app.
+          </p>
+
+          <h3>2. License Grant</h3>
+          <p>
+            We grant you a personal, non-exclusive, non-transferable, revocable license to use the AI Writing Layer keyboard on your compatible Android device in accordance with these terms.
+          </p>
+
+          <h3>3. Permitted and Acceptable Use</h3>
+          <p>
+            You agree to use the application solely for lawful communication. You agree NOT to use the AI assistant to:
+          </p>
+          <ul>
+            <li>Generate or transmit unlawful, defamatory, libelous, harassing, or abusive content.</li>
+            <li>Attempt to bypass rate limits, probe, scan, or reverse engineer backend edge APIs.</li>
+            <li>Transmit unsolicited commercial messages (spam) or malware.</li>
+          </ul>
+
+          <h3>4. AI Generated Suggestions</h3>
+          <p>
+            AI Writing Layer leverages artificial intelligence language models to generate writing suggestions, smart replies, and translations. You acknowledge that AI output is probabilistic. You retain ultimate responsibility for reviewing and verifying all generated text before sending it to third parties.
+          </p>
+
+          <h3>5. Limitation of Liability</h3>
+          <p>
+            To the maximum extent permitted by applicable law, AI Writing Layer and its developers shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the keyboard or reliance upon AI suggestions.
+          </p>
+
+          <h3>6. Governing Law</h3>
+          <p>
+            These Terms shall be governed by and construed in accordance with the laws of India, including the Information Technology Act, 2000 and Digital Personal Data Protection Act, 2023.
+          </p>
+        </article>
+      </div>
+
+      <!-- Tab 3: DPDP Act 2023 Compliance -->
+      <div class="tab-content" id="dpdpAct">
+        <article class="legal-document">
+          <h2>Digital Personal Data Protection (DPDP) Act 2023 Compliance</h2>
+          <div class="legal-meta">Compliance Statement for Indian Users & Global Standards</div>
+
+          <h3>1. Overview of DPDP Alignment</h3>
+          <p>
+            The <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong> mandates that Data Fiduciaries handle digital personal data lawfully, transparently, and strictly for specified purposes. AI Writing Layer operates with privacy by design:
+          </p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>DPDP Principle</th>
+                <th>AI Writing Layer Implementation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Purpose Limitation</strong></td>
+                <td>Text submitted via AI actions is processed strictly to generate immediate writing suggestions and discarded.</td>
+              </tr>
+              <tr>
+                <td><strong>Data Minimisation</strong></td>
+                <td>Day-to-day keystrokes remain 100% on-device. No extraneous personal data or contacts are collected.</td>
+              </tr>
+              <tr>
+                <td><strong>Storage Limitation</strong></td>
+                <td>Zero persistent storage of user text snippets. Processing occurs in ephemeral server RAM.</td>
+              </tr>
+              <tr>
+                <td><strong>Security Safeguards</strong></td>
+                <td>Encrypted TLS 1.3 in-transit communications, R8 ProGuard code obfuscation, and password auto-shielding.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>2. Rights of the Data Principal</h3>
+          <p>Under the DPDP Act 2023, you as a Data Principal hold specific statutory rights:</p>
+          <ul>
+            <li><strong>Right to Information:</strong> The right to know what personal data is processed, which is detailed in this document.</li>
+            <li><strong>Right to Correction & Erasure:</strong> Because we do not store persistent logs or account profiles, there is no personal data record stored to erase. Uninstalling the app removes all local tokens.</li>
+            <li><strong>Right of Grievance Redressal:</strong> Any concerns may be directly reported to our designated Grievance Officer.</li>
+            <li><strong>Right to Withdraw Consent:</strong> You may revoke keyboard activation or microphone permission at any time in Android settings.</li>
+          </ul>
+
+          <h3>3. Designated Grievance Officer</h3>
+          <p>
+            In accordance with the DPDP Act 2023, our designated Grievance Officer details are:
+            <br><strong>Title:</strong> Data Protection & Grievance Officer
+            <br><strong>Organization:</strong> AI Writing Layer Project
+            <br><strong>Email:</strong> grievance@aiwritinglayer.app
+          </p>
+        </article>
+      </div>
+
+      <!-- Tab 4: Play Store Data Safety Reference -->
+      <div class="tab-content" id="dataSafety">
+        <article class="legal-document">
+          <h2>Google Play Console Data Safety Reference Guide</h2>
+          <div class="legal-meta">Use this exact reference when filling out the Google Play Console Data Safety declaration</div>
+
+          <h3>Play Store Data Safety Declarations Table</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Collected?</th>
+                <th>Shared?</th>
+                <th>Processing Type</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Personal Info / Text Messages</strong> (Selected text for AI)</td>
+                <td>Yes (In-Transit)</td>
+                <td>No</td>
+                <td>Ephemeral (Not stored)</td>
+                <td>App Functionality (Writing suggestions & translation)</td>
+              </tr>
+              <tr>
+                <td><strong>Audio Recordings</strong> (Voice typing)</td>
+                <td>Yes (Ephemeral)</td>
+                <td>No</td>
+                <td>Real-time speech-to-text</td>
+                <td>App Functionality (Voice input)</td>
+              </tr>
+              <tr>
+                <td><strong>Device or Other IDs</strong> (Install ID header)</td>
+                <td>Yes (In-Transit)</td>
+                <td>No</td>
+                <td>Ephemeral / Header</td>
+                <td>Fraud Prevention & Rate Limiting</td>
+              </tr>
+              <tr>
+                <td><strong>Installed App Packages</strong> (Context detection)</td>
+                <td>Yes (Context flag)</td>
+                <td>No</td>
+                <td>Ephemeral string hint</td>
+                <td>App Functionality (Format chat vs email)</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Security Practices Checklist</h3>
+          <ul>
+            <li><strong>Data Encrypted in Transit:</strong> Yes (HTTPS / TLS 1.3 enforced via network security config).</li>
+            <li><strong>Data Deletion Request Mechanism:</strong> Yes (No persistent data retained; users can uninstall or contact developer).</li>
+            <li><strong>Committed to Google Play Families Policy:</strong> App target audience is 13+ / 18+.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 12px;">
+            <div class="brand-icon" style="width: 32px; height: 32px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <span class="brand-title" style="font-size: 1.15rem;">AI Writing Layer</span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-dim); max-width: 440px;">
+            The next-generation Android AI keyboard. Write faster, reply smarter, and translate fluently while preserving 100% of your privacy.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#simulator">Interactive Demo</a></li>
+            <li><a href="#security">Zero-Log Security</a></li>
+            <li><a href="#compliance">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal & Compliance</h5>
+          <ul>
+            <li><a href="#compliance">Privacy Policy</a></li>
+            <li><a href="#compliance">Terms of Service</a></li>
+            <li><a href="#compliance">DPDP Act 2023</a></li>
+            <li><a href="#compliance">Play Store Data Safety</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 AI Writing Layer. All rights reserved. Open source release.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">
+          Target SDK: 35 (Android 15) • Build v1.0.0
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
