@@ -1,4 +1,4 @@
-// AI Writing Layer Interactive Showcase Logic
+// Qweli AI Interactive Showcase Logic
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Tab Navigation for Legal & Compliance
